@@ -1,7 +1,19 @@
 import React, { Component } from 'react'
-import { View, Text, StyleSheet, TouchableOpacity, Image } from 'react-native'
+import { View, Text, StyleSheet, TouchableOpacity, Image, Dimensions } from 'react-native'
 import { Icon, Container, Left, Right, Body, Content, Button } from 'native-base'
 
+
+const images = [
+  require('../../assets/drink1.jpg'),
+  require('../../assets/beach1.jpg'),
+  require('../../assets/drink2.jpg'),
+  require('../../assets/drink3.jpg'),
+  require('../../assets/drink4.jpg'),
+  require('../../assets/drink5.jpg'),
+  require('../../assets/drink1.jpg')
+]
+
+const { width, height } = Dimensions.get('window')
 class ProfileTab extends Component {
   constructor(props) {
     super(props);
@@ -17,6 +29,27 @@ class ProfileTab extends Component {
       </TouchableOpacity>,
     title: 'Mike Janes',
     headerRight: <Icon name="ios-menu" style={{ paddingRight: 10 }} />,
+  }
+  renderSectionOne = () => {
+    return images.map((image, index) => {
+      return (
+        <View key={index} style={[{ width: (width) / 3, height: (width) / 3 }]}>
+          <Image style={{ flex: 1, width: undefined, height: undefined }}
+            source={image}
+          />
+        </View>
+      )
+    })
+  }
+
+  renderSection = () => {
+    if (this.state.activeIndex === 0) {
+      return (
+        <View style={{ flexDirection: 'row', flexWrap: 'wrap' }}>
+          {this.renderSectionOne()}
+        </View>
+      )
+    }
   }
 
   segment = (index) => {
@@ -104,7 +137,7 @@ class ProfileTab extends Component {
               </Button>
             </View>
 
-            {this.renderSection}
+            {this.renderSection()}
 
           </View>
 
