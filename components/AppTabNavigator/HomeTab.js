@@ -4,17 +4,13 @@ import { Icon, Container, Content, Card } from 'native-base'
 import CardComponent from '../cardComponent'
 import config from '../../config/config'
 import { TouchableOpacity } from 'react-native-gesture-handler';
-import AddMediaTab from './AddMediaTab';
-import { navigate, navigation } from 'react-navigation'
 
 
 class HomeTab extends React.Component {
+
   static navigationOptions = {
     headerLeft:
-      <TouchableOpacity onPress={() => {
-        // <AddMediaTab navigation={this.props.navigation} />
-        // this.props.navigation.navigate('AddMediaTab')
-      }}>
+      <TouchableOpacity onPress={() => { }}>
         <Icon name='ios-camera' style={{ paddingLeft: 10 }} />
       </TouchableOpacity>,
     title: 'FaceFriends',
