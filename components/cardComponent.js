@@ -3,19 +3,11 @@ import { View, Text, StyleSheet, Image } from 'react-native'
 import { Card, CardItem, Thumbnail, Body, Left, Right, Button, Icon } from 'native-base'
 import config from '../config/config.js'
 
+
 class cardComponent extends React.Component {
 
   render() {
-    const images = {
-      '1': config.images.beach1,
-      '2': require('../assets/drink2.jpg'),
-      '3': require('../assets/drink3.jpg'),
-      '4': require('../assets/drink4.jpg'),
-      '5': require('../assets/drink5.jpg'),
-
-
-    }
-    const imageUri = "https://lh3.googleusercontent.com/KJeCE4WgynNio0Y6E2q1lNpXlQI-Tk5RWT_uqz1w2P8l2QcjTzFFC6h8zmr7Bdbrw20QADBD6ysjbLGEG0g9G9YFeA"
+    // const imageUri = "https://lh3.googleusercontent.com/KJeCE4WgynNio0Y6E2q1lNpXlQI-Tk5RWT_uqz1w2P8l2QcjTzFFC6h8zmr7Bdbrw20QADBD6ysjbLGEG0g9G9YFeA"
     return (
       <Card style={{ marginLeft: 0, marginRight: 0, marginTop: 0 }}>
         <CardItem style={{ height: 64, marginLeft: -10, marginTop: 3, marginBottom: 3 }}>
@@ -31,7 +23,7 @@ class cardComponent extends React.Component {
         </CardItem>
 
         <View>
-          <Image source={images[this.props.imageSource]} style={{ height: 300, flex: 1, marginBottom: 10 }} />
+          <Image source={{ uri: config.images[this.props.imageSource] }} style={{ height: 300, flex: 1, marginBottom: 10 }} />
         </View>
 
         <CardItem style={{ height: 0 }}>
