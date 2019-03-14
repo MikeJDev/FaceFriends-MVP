@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { View, Text, StyleSheet, TouchableOpacity, Image, Dimensions } from 'react-native'
 import { Icon, Container, Left, Right, Body, Content, Button } from 'native-base'
-import config from '../../config/config'
+import CardComponent from '../cardComponent';
 
 
 const images = [
@@ -35,10 +35,12 @@ class ProfileTab extends Component {
     title: 'Mike Janes',
     headerRight: <Icon name="ios-menu" style={{ paddingRight: 10 }} />,
   }
+
+
   renderSectionOne = () => {
     return images.map((image, index) => {
       return (
-        <View key={index} style={[{ width: (width) / 3, height: (width) / 3 }]}>
+        <View key={index} style={[{ width: (width) / 3, height: (width) / 3 }, index % 3 !== 0 ? { paddingLeft: 2 } : { paddingLeft: 0 }, { marginBottom: 2 }]}>
           <Image style={{ flex: 1, width: undefined, height: undefined }}
             source={image}
           />
@@ -52,6 +54,22 @@ class ProfileTab extends Component {
       return (
         <View style={{ flexDirection: 'row', flexWrap: 'wrap' }}>
           {this.renderSectionOne()}
+        </View>
+      )
+    } else if (this.state.activeIndex === 1) {
+      return (
+        <View>
+          <CardComponent imageSource="0" pic='0' />
+
+          <CardComponent imageSource="2" pic='0' />
+
+          <CardComponent imageSource="4" pic='0' />
+
+          <CardComponent imageSource="6" pic='0' />
+
+          <CardComponent imageSource="8" pic='0' />
+
+          <CardComponent imageSource="10" pic='0' />
         </View>
       )
     }

@@ -23,18 +23,28 @@ class HomeTab extends React.Component {
     return (
       <Container style={styles.container}>
         <Content>
-          <CardComponent imageSource='0' description={config.descriptions[1]} />
-          <CardComponent imageSource='1' description={config.descriptions[2]} />
-          <CardComponent imageSource='2' description={config.descriptions[3]} />
-          <CardComponent imageSource='3' description={config.descriptions[4]} />
-          <CardComponent imageSource='4' description={config.descriptions[5]} />
-          <CardComponent imageSource='5' description={config.descriptions[6]} />
-          <CardComponent imageSource='0' description={config.descriptions[1]} />
-          <CardComponent imageSource='1' description={config.descriptions[2]} />
-          <CardComponent imageSource='2' description={config.descriptions[3]} />
-          <CardComponent imageSource='3' description={config.descriptions[4]} />
-          <CardComponent imageSource='4' description={config.descriptions[5]} />
-          <CardComponent imageSource='5' description={config.descriptions[6]} />
+          <CardComponent imageSource='0' description={config.descriptions[1]} username={config.names[1]} pic='0' />
+          <CardComponent imageSource='1' description={config.descriptions[2]} username={config.names[2]} pic='1' />
+          <CardComponent imageSource='2' description={config.descriptions[3]} username={config.names[1]} pic='0' />
+          <CardComponent imageSource='3' description={config.descriptions[4]} username={config.names[2]} pic='1' />
+          <CardComponent imageSource='4' description={config.descriptions[5]} username={config.names[1]} pic='0' />
+          <CardComponent imageSource='5' description={config.descriptions[6]} username={config.names[2]} pic='1' />
+          <CardComponent imageSource='6' description={config.descriptions[7]} username={config.names[1]} pic='0' />
+          <CardComponent imageSource='7' description={config.descriptions[8]} username={config.names[2]} pic='1' />
+          <CardComponent imageSource='8' description={config.descriptions[9]} username={config.names[1]} pic='0' />
+          <CardComponent imageSource='9' description={config.descriptions[10]} username={config.names[2]} pic='1' />
+          <CardComponent imageSource='10' description={config.descriptions[11]} username={config.names[1]} pic='0' />
+          <CardComponent imageSource='0' description={config.descriptions[1]} username={config.names[1]} pic='0' />
+          <CardComponent imageSource='1' description={config.descriptions[2]} username={config.names[2]} pic='1' />
+          <CardComponent imageSource='2' description={config.descriptions[3]} username={config.names[1]} pic='0' />
+          <CardComponent imageSource='3' description={config.descriptions[4]} username={config.names[2]} pic='1' />
+          <CardComponent imageSource='4' description={config.descriptions[5]} username={config.names[1]} pic='0' />
+          <CardComponent imageSource='5' description={config.descriptions[6]} username={config.names[2]} pic='1' />
+          <CardComponent imageSource='6' description={config.descriptions[7]} username={config.names[1]} pic='0' />
+          <CardComponent imageSource='7' description={config.descriptions[8]} username={config.names[2]} pic='1' />
+          <CardComponent imageSource='8' description={config.descriptions[9]} username={config.names[1]} pic='0' />
+          <CardComponent imageSource='9' description={config.descriptions[10]} username={config.names[2]} pic='1' />
+          <CardComponent imageSource='10' description={config.descriptions[11]} username={config.names[1]} pic='0' />
         </Content>
       </Container>
     )

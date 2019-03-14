@@ -57,9 +57,9 @@ class cardComponent extends React.Component {
       <Card style={{ marginLeft: 0, marginRight: 0, marginTop: 0 }}>
         <CardItem style={{ height: 64, marginLeft: -10, marginTop: 3, marginBottom: 3 }}>
           <Left>
-            <Thumbnail source={require('../assets/profpic.jpg')} style={{ resizeMode: 'contain' }} />
+            <Thumbnail source={{ uri: config.profilePictures[this.props.pic] }} />
             <Body>
-              <Text>Mike Janes</Text>
+              <Text>{this.props.username}</Text>
             </Body>
           </Left>
           <Right>
@@ -104,7 +104,7 @@ class cardComponent extends React.Component {
           {/* this is the description */}
           <Body>
             <Text >
-              <Text style={{ fontWeight: '700', fontSize: 15 }}> Mike Janes </Text>
+              <Text style={{ fontWeight: '700', fontSize: 15 }}> {this.props.username} </Text>
               {this.props.description}
             </Text>
             <Text style={{ fontSize: 9, marginTop: 10 }} note>March 12, 2019</Text>
