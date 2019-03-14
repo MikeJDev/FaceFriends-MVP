@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, Text, StyleSheet, Platform } from 'react-native'
+import { View, Text, StyleSheet, Platform, Button } from 'react-native'
 import { Icon } from 'native-base'
 import { createBottomTabNavigator, createAppContainer, createStackNavigator } from 'react-navigation'
 import ProfileTab from './AppTabNavigator/ProfileTab'
@@ -9,16 +9,10 @@ import AddMediaTab from './AppTabNavigator/AddMediaTab'
 import HomeTab from './AppTabNavigator/HomeTab'
 
 class MainScreen extends React.Component {
-  static navigationOptions = {
-    headerLeft: <Icon name='ios-camera' style={{ paddingLeft: 10 }} />,
-    title: 'FaceFriends',
-    headerRight: <Icon name="ios-send" style={{ paddingRight: 10 }} />
-  }
 
   render() {
     return (
       <AppTabNavigator />
-
     )
   }
 }
@@ -77,8 +71,6 @@ const AppTabNavigator = createBottomTabNavigator({
   }
 },
   {
-    animationEnabled: true,
-    swipeEnabled: true,
     tabBarPosition: 'bottom',
     tabBarOptions: {
       style: {
