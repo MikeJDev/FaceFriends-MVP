@@ -4,6 +4,8 @@ import { Icon, Container, Content, Card } from 'native-base'
 import CardComponent from '../cardComponent'
 import config from '../../config/config'
 import { TouchableOpacity } from 'react-native-gesture-handler';
+import axios from 'axios'
+import console from 'console';
 
 
 class HomeTab extends React.Component {

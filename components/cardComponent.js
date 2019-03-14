@@ -5,7 +5,9 @@ import config from '../config/config.js'
 import { TouchableOpacity } from 'react-native-gesture-handler';
 
 
+
 class cardComponent extends React.Component {
+
   constructor() {
     super();
     this.state = {
@@ -13,6 +15,17 @@ class cardComponent extends React.Component {
       likeCount: 10
     }
   }
+
+  componentDidMount = () => {
+    return fetch('/databaseRetrievalOnLoad')
+      .then((response) => {
+        alert(response.json())
+      })
+      .catch((error) => {
+        console.debug(error);
+      });
+  }
+
   likeToggle = () => {
     this.setState({
       liked: !this.state.liked

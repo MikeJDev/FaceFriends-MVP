@@ -3,11 +3,16 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "start": "node node_modules/react-native/local-cli/cli.js start",
+    "start": "nodemon server.js",
     "test": "jest"
   },
   "dependencies": {
+    "axios": "^0.18.0",
+    "cors": "^2.8.5",
+    "express": "^4.16.4",
+    "mongoose": "^5.4.19",
     "native-base": "^2.12.1",
+    "nodemon": "^1.18.10",
     "react": "16.8.3",
     "react-native": "0.59.0",
     "react-native-camera": "^2.0.0",
