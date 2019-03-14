@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { View, Text, StyleSheet, TouchableOpacity, Image, Dimensions } from 'react-native'
 import { Icon, Container, Left, Right, Body, Content, Button } from 'native-base'
+import config from '../../config/config'
 
 
 const images = [
@@ -10,7 +11,11 @@ const images = [
   require('../../assets/drink3.jpg'),
   require('../../assets/drink4.jpg'),
   require('../../assets/drink5.jpg'),
-  require('../../assets/drink1.jpg')
+  require('../../assets/drink6.jpg'),
+  require('../../assets/drink7.jpg'),
+  require('../../assets/drink8.jpg'),
+  require('../../assets/drink9.jpg'),
+  require('../../assets/drink10.jpeg'),
 ]
 
 const { width, height } = Dimensions.get('window')

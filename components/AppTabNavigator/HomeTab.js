@@ -5,7 +5,6 @@ import CardComponent from '../cardComponent'
 import config from '../../config/config'
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import axios from 'axios'
-import console from 'console';
 
 
 class HomeTab extends React.Component {
@@ -24,18 +23,18 @@ class HomeTab extends React.Component {
     return (
       <Container style={styles.container}>
         <Content>
-          <CardComponent imageSource='1' description={config.descriptions[1]} />
-          <CardComponent imageSource='2' description={config.descriptions[2]} />
-          <CardComponent imageSource='3' description={config.descriptions[3]} />
-          <CardComponent imageSource='4' description={config.descriptions[4]} />
-          <CardComponent imageSource='5' description={config.descriptions[5]} />
-          <CardComponent imageSource='6' description={config.descriptions[6]} />
-          <CardComponent imageSource='1' description={config.descriptions[1]} />
-          <CardComponent imageSource='2' description={config.descriptions[2]} />
-          <CardComponent imageSource='3' description={config.descriptions[3]} />
-          <CardComponent imageSource='4' description={config.descriptions[4]} />
-          <CardComponent imageSource='5' description={config.descriptions[5]} />
-          <CardComponent imageSource='6' description={config.descriptions[6]} />
+          <CardComponent imageSource='0' description={config.descriptions[1]} />
+          <CardComponent imageSource='1' description={config.descriptions[2]} />
+          <CardComponent imageSource='2' description={config.descriptions[3]} />
+          <CardComponent imageSource='3' description={config.descriptions[4]} />
+          <CardComponent imageSource='4' description={config.descriptions[5]} />
+          <CardComponent imageSource='5' description={config.descriptions[6]} />
+          <CardComponent imageSource='0' description={config.descriptions[1]} />
+          <CardComponent imageSource='1' description={config.descriptions[2]} />
+          <CardComponent imageSource='2' description={config.descriptions[3]} />
+          <CardComponent imageSource='3' description={config.descriptions[4]} />
+          <CardComponent imageSource='4' description={config.descriptions[5]} />
+          <CardComponent imageSource='5' description={config.descriptions[6]} />
         </Content>
       </Container>
     )
