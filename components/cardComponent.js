@@ -2,12 +2,44 @@ import React from 'react'
 import { View, Text, StyleSheet, Image } from 'react-native'
 import { Card, CardItem, Thumbnail, Body, Left, Right, Button, Icon } from 'native-base'
 import config from '../config/config.js'
+import { TouchableOpacity } from 'react-native-gesture-handler';
 
 
 class cardComponent extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      liked: false,
+      likeCount: 10
+    }
+  }
+  likeToggle = () => {
+    this.setState({
+      liked: !this.state.liked
+    })
+    if (!this.state.liked) {
+      this.setState({
+        likeCount: this.state.likeCount + 1
+      })
+    } else {
+      this.setState({
+        likeCount: this.state.likeCount - 1
+      })
+    }
+  }
+
+  handleDoubleTap = () => {
+    const now = Date.now();
+    const DOUBLE_PRESS_DELAY = 300;
+    if (this.lastTap && (now - this.lastTap) < DOUBLE_PRESS_DELAY) {
+      this.likeToggle();
+    } else {
+      this.lastTap = now;
+    }
+  }
 
   render() {
-    // const imageUri = "https://lh3.googleusercontent.com/KJeCE4WgynNio0Y6E2q1lNpXlQI-Tk5RWT_uqz1w2P8l2QcjTzFFC6h8zmr7Bdbrw20QADBD6ysjbLGEG0g9G9YFeA"
+    const heartIconColor = (this.state.liked) ? 'rgb(229, 76, 71)' : '#d1cece'
     return (
       <Card style={{ marginLeft: 0, marginRight: 0, marginTop: 0 }}>
         <CardItem style={{ height: 64, marginLeft: -10, marginTop: 3, marginBottom: 3 }}>
@@ -23,13 +55,22 @@ class cardComponent extends React.Component {
         </CardItem>
 
         <View>
-          <Image source={{ uri: config.images[this.props.imageSource] }} style={{ height: 300, flex: 1, marginBottom: 10 }} />
+          {/* this is the touchable picture */}
+          <TouchableOpacity activeOpacity={0.9}
+            onPress={() => {
+              this.handleDoubleTap()
+            }}>
+            <Image source={{ uri: config.images[this.props.imageSource] }} style={{ height: 300, flex: 1, marginBottom: 10 }} />
+          </TouchableOpacity>
         </View>
 
         <CardItem style={{ height: 0 }}>
+          {/* these are the buttons under the picture */}
           <Left>
-            <Button transparent>
-              <Icon name='ios-heart' style={{ color: '#d1cece', fontSize: 27 }} />
+            <Button transparent onPress={() => {
+              this.likeToggle()
+            }}>
+              <Icon name='ios-heart' style={{ color: heartIconColor, fontSize: 27 }} />
             </Button>
             <Button transparent>
               <Icon name='ios-chatbubbles' style={{ color: '#d1cece', fontSize: 27 }} />
@@ -41,17 +82,17 @@ class cardComponent extends React.Component {
         </CardItem>
 
         <CardItem style={{ marginBottom: -12 }}>
+          {/* this is the number of likes */}
           <Text style={{ height: 15, fontSize: 11 }}>
-            {this.props.likes}
+            {this.state.likeCount} Likes
           </Text>
         </CardItem>
         <CardItem>
+          {/* this is the description */}
           <Body>
-            <Text>
+            <Text >
               <Text style={{ fontWeight: '700', fontSize: 15 }}> Mike Janes </Text>
-              Crashing against the shore, small waves wash the night's debris onto the land.
-              The untouched golden sand covers the floor as far as your eyes can see. Soothing, a gentle sea breeze rustles through your hair.
-              Beach shops prepare for their day of excited costumers bustling in and out of their small seafront shops.
+              {this.props.description}
             </Text>
             <Text style={{ fontSize: 9, marginTop: 10 }} note>March 12, 2019</Text>
           </Body>

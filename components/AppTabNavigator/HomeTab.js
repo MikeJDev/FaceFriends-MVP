@@ -2,6 +2,7 @@ import React from 'react'
 import { View, Text, StyleSheet } from 'react-native'
 import { Icon, Container, Content, Card } from 'native-base'
 import CardComponent from '../cardComponent'
+import config from '../../config/config'
 
 
 class HomeTab extends React.Component {
@@ -15,18 +16,18 @@ class HomeTab extends React.Component {
     return (
       <Container style={styles.container}>
         <Content>
-          <CardComponent imageSource='1' likes='431' />
-          <CardComponent imageSource='2' likes='8453' />
-          <CardComponent imageSource='3' likes='12' />
-          <CardComponent imageSource='4' likes='947' />
-          <CardComponent imageSource='5' likes='381' />
-          <CardComponent imageSource='6' likes='674' />
-          <CardComponent imageSource='1' likes='565' />
-          <CardComponent imageSource='2' likes='32' />
-          <CardComponent imageSource='3' likes='98' />
-          <CardComponent imageSource='4' likes='576' />
-          <CardComponent imageSource='5' likes='83' />
-          <CardComponent imageSource='6' likes='2' />
+          <CardComponent imageSource='1' description={config.descriptions[1]} />
+          <CardComponent imageSource='2' description={config.descriptions[2]} />
+          <CardComponent imageSource='3' description={config.descriptions[3]} />
+          <CardComponent imageSource='4' description={config.descriptions[4]} />
+          <CardComponent imageSource='5' description={config.descriptions[5]} />
+          <CardComponent imageSource='6' description={config.descriptions[6]} />
+          <CardComponent imageSource='1' description={config.descriptions[1]} />
+          <CardComponent imageSource='2' description={config.descriptions[2]} />
+          <CardComponent imageSource='3' description={config.descriptions[3]} />
+          <CardComponent imageSource='4' description={config.descriptions[4]} />
+          <CardComponent imageSource='5' description={config.descriptions[5]} />
+          <CardComponent imageSource='6' description={config.descriptions[6]} />
         </Content>
       </Container>
     )
