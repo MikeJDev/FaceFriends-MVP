@@ -15,7 +15,21 @@ class HomeTab extends React.Component {
     return (
       <Container style={styles.container}>
         <Content>
-          <CardComponent />
+          <CardComponent imageSource='1' likes='431' />
+          <CardComponent imageSource='2' likes='431' />
+          <CardComponent imageSource='3' likes='431' />
+          <CardComponent imageSource='4' likes='431' />
+          <CardComponent imageSource='5' likes='431' />
+          <CardComponent imageSource='5' likes='431' />
+          <CardComponent imageSource='5' likes='431' />
+          <CardComponent imageSource='5' likes='431' />
+          <CardComponent imageSource='5' likes='431' />
+          <CardComponent imageSource='5' likes='431' />
+          <CardComponent imageSource='5' likes='431' />
+          <CardComponent imageSource='5' likes='431' />
+          <CardComponent imageSource='5' likes='431' />
+          <CardComponent imageSource='5' likes='431' />
+          <CardComponent imageSource='5' likes='431' />
         </Content>
       </Container>
     )
