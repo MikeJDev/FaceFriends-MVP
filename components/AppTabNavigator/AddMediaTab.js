@@ -11,6 +11,7 @@ class AddMediaTab extends Component {
       .catch(err => { });
   }
 
+
   render() {
     return (
       <Camera
