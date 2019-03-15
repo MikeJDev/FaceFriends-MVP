@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { View, Text, StyleSheet, TouchableOpacity, Image, Dimensions } from 'react-native'
 import { Icon, Container, Left, Right, Body, Content, Button } from 'native-base'
 import CardComponent from '../cardComponent';
+import config from '../../config/config';
 
 
 const images = [
@@ -29,11 +30,20 @@ class ProfileTab extends Component {
 
   static navigationOptions = {
     headerLeft:
-      <TouchableOpacity onPress={() => { }}>
+      <TouchableOpacity onPress={() => {
+        alert("This will allow the user to add friends. (edit this button in ProfileTab.js line 34)")
+      }}>
         <Icon name='md-person-add' style={{ paddingLeft: 10 }} />
       </TouchableOpacity>,
     title: 'Mike Janes',
-    headerRight: <Icon name="ios-menu" style={{ paddingRight: 10 }} />,
+
+    headerRight:
+      <TouchableOpacity onPress={() => {
+        alert("This is a menu! (edit this button in ProfileTab.js line 42)")
+      }}>
+        <Icon name="ios-menu" style={{ paddingRight: 10 }} />
+      </TouchableOpacity >,
+
   }
 
 
@@ -59,17 +69,17 @@ class ProfileTab extends Component {
     } else if (this.state.activeIndex === 1) {
       return (
         <View>
-          <CardComponent imageSource="0" pic='0' />
+          <CardComponent imageSource="0" pic='0' description={config.descriptions[1]} username={config.names[1]} pic='0' />
 
-          <CardComponent imageSource="2" pic='0' />
+          <CardComponent imageSource="2" pic='0' description={config.descriptions[8]} username={config.names[1]} pic='0' />
 
-          <CardComponent imageSource="4" pic='0' />
+          <CardComponent imageSource="4" pic='0' description={config.descriptions[5]} username={config.names[1]} pic='0' />
 
-          <CardComponent imageSource="6" pic='0' />
+          <CardComponent imageSource="6" pic='0' description={config.descriptions[7]} username={config.names[1]} pic='0' />
 
-          <CardComponent imageSource="8" pic='0' />
+          <CardComponent imageSource="8" pic='0' description={config.descriptions[9]} username={config.names[1]} pic='0' />
 
-          <CardComponent imageSource="10" pic='0' />
+          <CardComponent imageSource="10" pic='0' description={config.descriptions[11]} username={config.names[1]} pic='0' />
         </View>
       )
     }
@@ -96,7 +106,7 @@ class ProfileTab extends Component {
                 <View style={{ flexDirection: 'row', justifyContent: 'space-around' }}>
 
                   <View style={{ alignItems: 'center' }}>
-                    <Text>12</Text>
+                    <Text>11</Text>
                     <Text style={{ fontSize: 10, color: 'grey' }}>Posts</Text>
                   </View>
 
@@ -112,12 +122,16 @@ class ProfileTab extends Component {
                 </View>
                 {/* buttons */}
                 <View style={{ flexDirection: 'row', paddingTop: 10 }}>
-                  <Button bordered dark style={{ flex: 3, marginLeft: 10, justifyContent: 'center', height: 30 }}>
+                  <Button bordered dark style={{ flex: 3, marginLeft: 10, justifyContent: 'center', height: 30 }} onPress={() => {
+                    alert("This will bring up a menu to allow profile editing. (edit this button in ProfileTab.js line 126)")
+                  }}>
                     <Text>
                       Edit Profile
                   </Text>
                   </Button>
-                  <Button bordered dark style={{ flex: 1, height: 30, marginLeft: 10, marginRight: 5, justifyContent: 'center' }}>
+                  <Button bordered dark style={{ flex: 1, height: 30, marginLeft: 10, marginRight: 5, justifyContent: 'center' }} onPress={() => {
+                    alert("This is the settings menu. (edit this button in ProfileTab.js line 133)")
+                  }}>
                     <Icon name='settings' style={{ fontSize: 20, marginBottom: -10, marginTop: -10 }} />
                   </Button>
                 </View>

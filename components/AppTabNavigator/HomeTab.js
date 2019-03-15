@@ -11,7 +11,9 @@ class HomeTab extends React.Component {
 
   static navigationOptions = {
     headerLeft:
-      <TouchableOpacity onPress={() => { }}>
+      <TouchableOpacity onPress={() => {
+        alert("This should open the camera!")
+      }}>
         <Icon name='ios-camera' style={{ paddingLeft: 10 }} />
       </TouchableOpacity>,
     title: 'FaceFriends',
@@ -25,7 +27,7 @@ class HomeTab extends React.Component {
         <Content>
           <CardComponent imageSource='0' description={config.descriptions[1]} username={config.names[1]} pic='0' />
           <CardComponent imageSource='1' description={config.descriptions[2]} username={config.names[2]} pic='1' />
-          <CardComponent imageSource='2' description={config.descriptions[3]} username={config.names[1]} pic='0' />
+          <CardComponent imageSource='2' description={config.descriptions[8]} username={config.names[1]} pic='0' />
           <CardComponent imageSource='3' description={config.descriptions[4]} username={config.names[2]} pic='1' />
           <CardComponent imageSource='4' description={config.descriptions[5]} username={config.names[1]} pic='0' />
           <CardComponent imageSource='5' description={config.descriptions[6]} username={config.names[2]} pic='1' />
@@ -36,7 +38,7 @@ class HomeTab extends React.Component {
           <CardComponent imageSource='10' description={config.descriptions[11]} username={config.names[1]} pic='0' />
           <CardComponent imageSource='0' description={config.descriptions[1]} username={config.names[1]} pic='0' />
           <CardComponent imageSource='1' description={config.descriptions[2]} username={config.names[2]} pic='1' />
-          <CardComponent imageSource='2' description={config.descriptions[3]} username={config.names[1]} pic='0' />
+          <CardComponent imageSource='2' description={config.descriptions[8]} username={config.names[1]} pic='0' />
           <CardComponent imageSource='3' description={config.descriptions[4]} username={config.names[2]} pic='1' />
           <CardComponent imageSource='4' description={config.descriptions[5]} username={config.names[1]} pic='0' />
           <CardComponent imageSource='5' description={config.descriptions[6]} username={config.names[2]} pic='1' />
